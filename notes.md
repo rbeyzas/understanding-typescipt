@@ -33,3 +33,7 @@ This would be the type of such an object:
 ```
 
 So you have an object type in an object type so to say.
+
+- Literal types: Tip tanımlamalarının arasında | işareti bulunmaktadır.
+
+Tip atamalarında mutlaka “string, number, boolean…” gibi değerler kullanmak şart değildir. Tipleri özelleştirebilir ve string olarak belirttiğimiz kırmızı | sarı | yeşil gibi kullanabiliriz ve buna da String Literal Type denir.

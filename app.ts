@@ -1,37 +1,30 @@
-const person1 = {
-  name: 'John',
-  age: 25,
-};
+function combine(
+  input1: number | string,
+  input2: number | string,
+  resultConversion: 'as-number' | 'as-text',
+) {
+  let result;
+  if (
+    (typeof input1 === 'number' && typeof input2 === 'number') ||
+    resultConversion === 'as-number'
+  ) {
+    result = +input1 + +input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
+  // if (resultConversion === 'as-number') {
+  //   return +result;
+  // } else {
+  //   return result.toString();
+  // }
+}
 
-console.log(person1.name);
-// console.log(person.nickname); // error
-// --------------------------------
+const combinedAges = combine(30, 26, 'as-number');
+console.log(combinedAges);
 
-// const person: {
-//   name: string;
-//   age: number;
-// } = {
-const person2 = {
-  name: 'Beyza',
-  age: 30,
-};
+const combinedStringAges = combine('30', '26', 'as-number');
+console.log(combinedStringAges);
 
-console.log(person2.name);
-// --------------------------------
-// const person3: object = {
-//   name: 'Beyza',
-//   age: 30,
-// };
-
-// console.log(person3.name);
-
-// burda ts'e object dedik ama object'in içindeki propertylere ulaşamıyoruz çünkü başka hiçbir şey bildirmedik. name ögesini bulamaz çünkü object'in içindeki ögelerin tiplerini belirtmedik.
-// --------------------------------
-
-// const person4: {} = {
-//   name: 'Beyza',
-//   age: 30,
-// };
-
-// console.log(person4.name);
-// köşeli parantez  ts'de özel bir nesne türü gösterimidir. yukardaki kodla aynı durum geçerli. name ögesine ulaşamıyoruz.
+const combinedNames = combine('Max', 'Anna', 'as-text');
+console.log(combinedNames);
